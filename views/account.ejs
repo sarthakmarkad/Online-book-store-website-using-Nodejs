@@ -1,0 +1,3 @@
+<%- include("partials/header", { title: "My account" }) %>
+<main class="auth-page"><div class="account-card"><p class="eyebrow">YOUR BOOKHAVEN ACCOUNT</p><h1>Welcome, <em><%= account.name.split(" ")[0] %>.</em></h1><div class="account-details"><div><span>Name</span><strong><%= account.name %></strong></div><div><span>Email</span><strong><%= account.email %></strong></div><div><span>Member since</span><strong><%= new Date(account.created_at).toLocaleDateString("en-IN", { month: "long", year: "numeric" }) %></strong></div></div><a class="button" href="/books">Browse books <span>→</span></a></div></main>
+<%- include("partials/footer") %>

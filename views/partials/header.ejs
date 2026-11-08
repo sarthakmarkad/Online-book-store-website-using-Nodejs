@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || "BookHaven" %> | BookHaven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">B</span>BookHaven</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Home</a>
+        <a class="<%= currentPath === '/books' ? 'active' : '' %>" href="/books">Browse books</a>
+        <a class="cart-link <%= currentPath === '/cart' ? 'active' : '' %>" href="/cart">Cart <span class="cart-count"><%= cartCount %></span></a>
+        <% if (user) { %>
+          <a class="<%= currentPath === '/account' ? 'active' : '' %>" href="/account">My account</a>
+          <form action="/logout" method="post"><button class="nav-button" type="submit">Sign out</button></form>
+        <% } else { %>
+          <a class="nav-button outline" href="/login">Sign in</a>
+          <a class="nav-button" href="/register">Join us</a>
+        <% } %>
+      </nav>
+    </div>
+  </header>

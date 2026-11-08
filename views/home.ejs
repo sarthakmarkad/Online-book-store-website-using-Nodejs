@@ -1,0 +1,7 @@
+<%- include("partials/header", { title: "Discover your next story" }) %>
+<main>
+  <section class="hero"><div class="container hero-grid"><div><p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p><h1>Stories that stay <em>with you.</em></h1><p class="hero-copy">Discover thoughtfully selected books for curious minds, quiet evenings, and every adventure in between.</p><div class="hero-actions"><a class="button" href="/books">Explore collection <span>→</span></a><a class="text-link" href="/register">Join BookHaven <span>↗</span></a></div></div><div class="hero-art"><div class="sun"></div><div class="book-stack"><span></span><span></span><span></span></div><div class="hero-note">READ<br><strong>MORE</strong></div></div></div></section>
+  <section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Featured books</h2></div><a class="text-link" href="/books">View all books →</a></div><div class="book-grid"><% books.forEach(book => { %><%- include("partials/book-card", { book }) %><% }) %></div></div></section>
+  <section class="categories"><div class="container"><p class="eyebrow">FIND YOUR NEXT OBSESSION</p><h2>What are you in the mood for?</h2><div class="category-list"><% categories.forEach(item => { %><a href="/books?category=<%= encodeURIComponent(item.category) %>"><span><%= item.category %></span><b>↗</b></a><% }) %></div></div></section>
+</main>
+<%- include("partials/footer") %>

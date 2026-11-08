@@ -1,0 +1,5 @@
+node_modules/
+bookstore.db
+.DS_Store
+.env
+npm-debug.log*
